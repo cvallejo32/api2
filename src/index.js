@@ -21,8 +21,7 @@ app.get("/", (req,res) => {
 });
 
 app.post("/", (req, res) => {
-
-    const ( user_name = req.body)
+    const { user_name, password } = req.body
 
     const user = {
         id: uuid(),
@@ -35,15 +34,13 @@ app.post("/", (req, res) => {
     return res.json({
         ok: true,
         msg: "Usuario creado",
-        data; user
-    })
-
-
-
+        data: user,
+    });
 });
+
+
 
 //4 servidor
 app.listen(PORT, () => {
     console.log(`Servidor ejecutando en el puerto ${PORT}`);
-  
     });
