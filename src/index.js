@@ -21,7 +21,22 @@ app.get("/", (req,res) => {
 });
 
 app.post("/", (req, res) => {
-    
+
+    const ( user_name = req.body)
+
+    const user = {
+        id: uuid(),
+        user_name: user_name,
+        password: password,
+    }
+
+    users.push(user);
+
+    return res.json({
+        ok: true,
+        msg: "Usuario creado",
+        data; user
+    })
 
 
 
