@@ -5,6 +5,8 @@ const PORT = 4000;
 
 const { users } = require("./database/db");
 
+const { v4: uuid } =require("uuid");
+
 //2 middlewares
 app.use(express.json());
 
@@ -16,6 +18,13 @@ app.get("/", (req,res) => {
         data: users
 
     });
+});
+
+app.post("/", (req, res) => {
+    
+
+
+
 });
 
 //4 servidor
